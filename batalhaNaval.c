@@ -52,11 +52,51 @@ int main() {
             }
     }
     printf("\n");
+    printf("\n");
 
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
     // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
     // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
     // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
+    
+    //posicionar um navio na diagonal à direita em 5C
+    
+    for(int i = 0; i < 3; i++ ){
+        
+        if (tabuleiro[4+i][2+i] == 0){
+            
+            tabuleiro[4+i][2+i] = 3;
+        }
+        else {
+        printf("\n Não é possível posicionar o navio!\n");
+        break;
+        }
+    }
+
+    //posicionar um navio na diagonal à esquerda em 7F
+    for(int i = 0; i < 3; i++ ){
+        if (tabuleiro[6-i][5-i] == 0){
+            tabuleiro[6-i][5-i] = 3;
+        }
+        else {
+        printf("\n Não é possível posicionar o navio!\n");
+        break;
+        }    
+    }
+   
+    printf(" ");
+    for(int i = 0; i<=10; i++){
+        printf("%c ", colunas[i]);
+
+    }
+    for(int i = 0; i< 10; i++){
+        printf("\n");
+        printf("%s",linhas[i]);
+        for(int j = 0; j<10; j++){
+            printf(" %d", tabuleiro[i][j]);
+            }
+    }
+    printf("\n");
 
     // Nível Mestre - Habilidades Especiais com Matrizes
     // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
@@ -68,16 +108,102 @@ int main() {
     // 0 0 1 0 0
     // 0 1 1 1 0
     // 1 1 1 1 1
+
+
+     //Cone em 3H
+    int linha  = 2;
+    int coluna = 7;
+
+    for(int i = 0; i < 3; i++ ){
+        for(int j = 0; j < (i+1); j++)
+            if (tabuleiro[linha+i][coluna+j] == 0){
+                tabuleiro[linha+i][coluna+0] = 1;
+                tabuleiro[linha+i][coluna-j] = 1;
+                tabuleiro[linha+i][coluna+j] = 1;
+        }
+        else {
+        printf("\n Não é possível posicionar o cone!\n");
+        break;
+        }    
+    }
+   
+    printf(" ");
+    for(int i = 0; i<=10; i++){
+        printf("%c ", colunas[i]);
+
+    }
+    for(int i = 0; i< 10; i++){
+        printf("\n");
+        printf("%s",linhas[i]);
+        for(int j = 0; j<10; j++){
+            printf(" %d", tabuleiro[i][j]);
+            }
+    }
+    printf("\n");
     
     // Exemplo para habilidade em octaedro:
     // 0 0 1 0 0
     // 0 1 1 1 0
     // 0 0 1 0 0
 
+     //Cone em 3C
+    linha  = 6;
+    coluna = 2;
+
+    for(int i = 0; i < 3; i++ ){            
+           switch (i){
+                case 0: tabuleiro[linha+i][coluna] = 1;
+                        break;
+                case 1: tabuleiro[linha+i][coluna-i] = 1;
+                        tabuleiro[linha+i][coluna+1] = 1;
+                        tabuleiro[linha+i][coluna] = 1;
+                        break; 
+                case 2: tabuleiro[linha+i][coluna] = 1;
+                        break;          
+            
+            }
+            
+            
+    }
+   
+    printf(" ");
+    for(int i = 0; i<=10; i++){
+        printf("%c ", colunas[i]);
+
+    }
+    for(int i = 0; i< 10; i++){
+        printf("\n");
+        printf("%s",linhas[i]);
+        for(int j = 0; j<10; j++){
+            printf(" %d", tabuleiro[i][j]);
+            }
+    }
+    printf("\n");
+
+
     // Exemplo para habilidade em cruz:
     // 0 0 1 0 0
     // 1 1 1 1 1
     // 0 0 1 0 0
 
+
+    int linha  = 7;
+    int coluna = 5;
+
+    for(int i = 0; i < 3; i++ ){
+        switch(i)
+            case(0)
+                    for(int j = 0; j < (i*5 +); j++)
+                     if (tabuleiro[linha+i][coluna] == 0){
+                         tabuleiro[linha+i][(coluna -2 + j)*j] = 1;
+
+        }
+        else {
+        printf("\n Não é possível posicionar o cone!\n");
+        break;
+        }    
+    }
+   
+    
     return 0;
 }
