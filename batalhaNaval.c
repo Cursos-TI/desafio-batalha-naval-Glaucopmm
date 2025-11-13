@@ -148,7 +148,7 @@ int main() {
 
      //Cone em 3C
     linha  = 6;
-    coluna = 2;
+    coluna = 1;
 
     for(int i = 0; i < 3; i++ ){            
            switch (i){
@@ -187,22 +187,39 @@ int main() {
     // 0 0 1 0 0
 
 
-    int linha  = 7;
-    int coluna = 5;
+    linha  = 7;
+    coluna = 5;
 
     for(int i = 0; i < 3; i++ ){
-        switch(i)
-            case(0)
-                    for(int j = 0; j < (i*5 +); j++)
-                     if (tabuleiro[linha+i][coluna] == 0){
-                         tabuleiro[linha+i][(coluna -2 + j)*j] = 1;
+        switch(i){
+            case(0):
+                tabuleiro[linha+i][coluna] = 1;
+                break;
+            case(1):
+                for(int j = 0; j < 5; j++ ){
+                    tabuleiro[linha+i][coluna - 2 + j] = 1;
+                }
+            case(2):
+                tabuleiro[linha+i][coluna] = 1;
 
         }
-        else {
-        printf("\n Não é possível posicionar o cone!\n");
-        break;
-        }    
+    }    
+    
+   
+    printf(" ");
+    for(int i = 0; i<=10; i++){
+        printf("%c ", colunas[i]);
+
     }
+    for(int i = 0; i< 10; i++){
+        printf("\n");
+        printf("%s",linhas[i]);
+        for(int j = 0; j<10; j++){
+            printf(" %d", tabuleiro[i][j]);
+            }
+    }
+    printf("\n");
+
    
     
     return 0;
